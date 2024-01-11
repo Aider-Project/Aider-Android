@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_assignmentt"
+    app:startDestination="@id/assginmentTFragment">
+
+    <fragment
+        android:id="@+id/assginmentTFragment"
+        android:name="com.one.feature.assignment.teacher.AssignmentTFragment"
+        android:label="fragment_assginment_t"
+        tools:layout="@layout/fragment_assginment_t" >
+        <action
+            android:id="@+id/action_assginmentTFragment_to_detailQuestionFragment"
+            app:destination="@id/detailQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addQuestionFragment"
+        android:name="com.one.feature.assignment.teacher.detail.add.AddQuestionFragment"
+        android:label="fragment_add_question"
+        tools:layout="@layout/fragment_add_question" />
+    <fragment
+        android:id="@+id/detailQuestionFragment"
+        android:name="com.one.feature.assignment.teacher.detail.DetailQuestionFragment"
+        android:label="fragment_detail_question"
+        tools:layout="@layout/fragment_detail_question" >
+        <action
+            android:id="@+id/action_detailQuestionFragment_to_addQuestionFragment"
+            app:destination="@id/addQuestionFragment" />
+        <action
+            android:id="@+id/action_detailQuestionFragment_to_addFeedbackFragment"
+            app:destination="@id/addFeedbackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFeedbackFragment"
+        android:name="com.one.feature.assignment.teacher.detail.feedback.AddFeedbackFragment"
+        android:label="fragment_add_feedback"
+        tools:layout="@layout/fragment_add_feedback" />
+</navigation>

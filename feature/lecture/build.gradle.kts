@@ -1,20 +1,15 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.aider.android.feature)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = "com.one.feature.assignment"
+    namespace = "com.one.feature.lecture"
 }
 
 dependencies {
 
-    // ConstraintLayout
-    implementation(libs.androidx.constraintlayout)
-    // Appcompat
-    implementation(libs.androidx.appcompat)
-
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

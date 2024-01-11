@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.aider.android.application)
     alias(libs.plugins.aider.android.hilt)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -34,9 +35,23 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
+    implementation(projects.feature.calendar)
+    implementation(projects.feature.lecture)
+    implementation(projects.feature.assignment)
+    implementation(projects.feature.messenger)
+    implementation(projects.feature.setting)
+    implementation(projects.core.commonUi)
+    implementation(projects.core.common)
+
+    implementation(libs.bundles.navigation)
+    implementation(libs.bundles.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
