@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.one.feature.assignment"
+    namespace = "com.one.feature.lecture"
 }
 
 dependencies {
