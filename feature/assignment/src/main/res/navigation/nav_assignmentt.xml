@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/assginmentTFragment"
-        android:name="com.one.feature.assignment.teacher.AssginmentTFragment"
+        android:name="com.one.feature.assignment.teacher.AssignmentTFragment"
         android:label="fragment_assginment_t"
         tools:layout="@layout/fragment_assginment_t" >
         <action

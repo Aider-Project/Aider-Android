@@ -1,10 +1,10 @@
 package com.one.feature.lecture.teacher.detail.add
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.one.feature.lecture.R
 
 // TODO: Rename parameter arguments, choose names that match
