@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.one.aider.feature.assignment"
+    namespace = "com.one.feature.assignment"
 }
 
 dependencies {

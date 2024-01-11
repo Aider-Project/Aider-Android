@@ -1,9 +1,14 @@
+@file:Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+    alias(libs.plugins.aider.java.library)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
-}
+//plugins {
+//    id("java-library")
+//    id("org.jetbrains.kotlin.jvm")
+//}
+//
+//java {
+//    sourceCompatibility = JavaVersion.VERSION_1_7
+//    targetCompatibility = JavaVersion.VERSION_1_7
+//}
