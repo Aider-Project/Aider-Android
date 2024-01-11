@@ -36,6 +36,8 @@
             <option value="$PROJECT_DIR$/feature/assignment" />
             <option value="$PROJECT_DIR$/feature/calendar" />
             <option value="$PROJECT_DIR$/feature/lecture" />
+            <option value="$PROJECT_DIR$/feature/messenger" />
+            <option value="$PROJECT_DIR$/feature/setting" />
           </set>
         </option>
       </GradleProjectSettings>

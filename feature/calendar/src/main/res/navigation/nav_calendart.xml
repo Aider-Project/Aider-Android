@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_calendart"
+    app:startDestination="@id/calendarTFragment">
+
+    <fragment
+        android:id="@+id/calendarTFragment"
+        android:name="com.one.feature.assignment.teacher.CalendarTFragment"
+        android:label="CalendarTFragment" >
+        <action
+            android:id="@+id/action_calendarTFragment_to_calendarAddFragment"
+            app:destination="@id/calendarAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarAddFragment"
+        android:name="com.one.feature.calendar.teacher.add.CalendarAddFragment"
+        android:label="fragment_calendar_add"
+        tools:layout="@layout/fragment_calendar_add" />
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_calendart"
+        android:icon="@drawable/selector_calendar_btnv"
+        android:title="홈"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_lecturet"
+        android:icon="@drawable/selector_lecture_btnv"
+        android:title="수업"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_assignmentt"
+        android:icon="@drawable/selector_assignment_btnv"
+        android:title="숙제"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_messenger"
+        android:icon="@drawable/selector_messenger_btnv"
+        android:title="메신저"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/selector_setting_btnv"
+        android:title="설정"
+        app:showAsAction="ifRoom" />
+</menu>
