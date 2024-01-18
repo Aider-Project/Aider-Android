@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TeacherActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

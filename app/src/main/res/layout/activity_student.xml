@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graphs" />
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btnv_student"
         android:layout_width="match_parent"
@@ -26,6 +25,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_btnv_student"/>
+        app:menu="@menu/menu_btnv_student"
+        app:itemBackground="@color/white"
+        app:itemActiveIndicatorStyle="@android:color/transparent"
+        app:labelVisibilityMode="labeled"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

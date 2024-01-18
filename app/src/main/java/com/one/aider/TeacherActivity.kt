@@ -13,7 +13,7 @@ class TeacherActivity : BaseActivity<ActivityTeacherBinding>(ActivityTeacherBind
         val navController = navHostFragment.navController
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.btnv_teacher)
-        bottomNavigationView.setItemIconTintList(null) // Tint 초기화
+        bottomNavigationView.itemIconTintList = null // Tint 초기화
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
     }

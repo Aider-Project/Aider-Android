@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/calendarSFragment"
-        android:name="com.one.feature.assignment.student.CalendarSFragment"
+        android:name="com.one.feature.calendar.student.CalendarSFragment"
         android:label="CalendarSFragment" />
 </navigation>
