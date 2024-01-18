@@ -13,6 +13,10 @@ dependencies {
     api(projects.core.model)
     implementation(projects.core.common)
 
+    // navigation
+    implementation(libs.bundles.navigation)
+    // FlowBinding
+    implementation(libs.bundles.flowbinding)
     // ConstraintLayout
     implementation(libs.androidx.constraintlayout)
     // Appcompat

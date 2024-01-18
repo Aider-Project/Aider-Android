@@ -7,7 +7,7 @@ import com.one.core.common_ui.base.BaseFragment
 
 class IdPwFragment : BaseFragment<FragmentIdPwBinding>(FragmentIdPwBinding::inflate) {
     override fun onViewCreated() {
-        binding.tvIdpwTorole.setOnClickListener {
+        binding.tvIdpwTorole.setOnAvoidDuplicateClickFlow {
             findNavController().navigate(R.id.action_idPwFragment_to_roleFragment)
         }
     }

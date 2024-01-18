@@ -1,6 +1,7 @@
 [versions]
 androidx-junit = "1.1.5"
 espresso-core = "3.5.1"
+
 junit = "4.13.2"
 
 appcompat = "1.6.1"
@@ -22,6 +23,8 @@ lifecycle-runtime-ktx = "2.6.2"
 lifecycle-viewmodel-ktx = "2.6.2"
 fragment-ktx = "1.6.2"
 activity-ktx = "1.8.2"
+# FlowBinding
+flowbinding = "1.2.0"
 
 [plugins]
 # Plugins defined by this project
@@ -31,7 +34,7 @@ aider-android-hilt = { id = "aider.android.hilt", version = "unspecified" }
 aider-android-library = { id = "aider.android.library", version = "unspecified" }
 aider-java-library = { id = "aider.java.library", version = "unspecified" }
 
-android-application = { id = "com.android.application" ,version.ref = "android" }
+android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -69,6 +72,20 @@ androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtim
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
+# FlowBinding
+flowbinding-material = { module = "io.github.reactivecircus.flowbinding:flowbinding-material", version.ref = "flowbinding" }
+flowbinding-viewpager2 = { module = "io.github.reactivecircus.flowbinding:flowbinding-viewpager2", version.ref = "flowbinding" }
+flowbinding-viewpager = { module = "io.github.reactivecircus.flowbinding:flowbinding-viewpager", version.ref = "flowbinding" }
+flowbinding-swiperefreshlayout = { module = "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout", version.ref = "flowbinding" }
+flowbinding-recyclerview = { module = "io.github.reactivecircus.flowbinding:flowbinding-recyclerview", version.ref = "flowbinding" }
+flowbinding-preference = { module = "io.github.reactivecircus.flowbinding:flowbinding-preference", version.ref = "flowbinding" }
+flowbinding-navigation = { module = "io.github.reactivecircus.flowbinding:flowbinding-navigation", version.ref = "flowbinding" }
+flowbinding-lifecycle = { module = "io.github.reactivecircus.flowbinding:flowbinding-lifecycle", version.ref = "flowbinding" }
+flowbinding-drawerlayout = { module = "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout", version.ref = "flowbinding" }
+flowbinding-core = { module = "io.github.reactivecircus.flowbinding:flowbinding-core", version.ref = "flowbinding" }
+flowbinding-appcompat = { module = "io.github.reactivecircus.flowbinding:flowbinding-appcompat", version.ref = "flowbinding" }
+flowbinding-activity = { module = "io.github.reactivecircus.flowbinding:flowbinding-activity", version.ref = "flowbinding" }
+flowbinding-android = { module = "io.github.reactivecircus.flowbinding:flowbinding-android", version.ref = "flowbinding" }
 [bundles]
 # coroutines
 coroutine = [
@@ -88,4 +105,20 @@ ktx = [
     "androidx-lifecycle-viewmodel-ktx",
     "androidx-fragment-ktx",
     "androidx-activity-ktx"
+]
+# FlowBinding
+flowbinding = [
+    "flowbinding-viewpager2",
+    "flowbinding-viewpager",
+    "flowbinding-swiperefreshlayout",
+    "flowbinding-recyclerview",
+    "flowbinding-preference",
+    "flowbinding-navigation",
+    "flowbinding-material",
+    "flowbinding-lifecycle",
+    "flowbinding-drawerlayout",
+    "flowbinding-core",
+    "flowbinding-appcompat",
+    "flowbinding-android",
+    "flowbinding-activity"
 ]

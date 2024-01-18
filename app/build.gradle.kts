@@ -1,4 +1,5 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
     alias(libs.plugins.aider.android.application)
     alias(libs.plugins.aider.android.hilt)
@@ -35,7 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         dataBinding = true
     }
@@ -52,6 +53,7 @@ dependencies {
 
     implementation(libs.bundles.navigation)
     implementation(libs.bundles.ktx)
+    implementation(libs.bundles.flowbinding)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

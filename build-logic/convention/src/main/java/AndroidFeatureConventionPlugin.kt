@@ -14,7 +14,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             dependencies {
                 add("implementation", project(":core:common"))
                 add("implementation", project(":core:common-ui"))
-                add("implementation", libs.findBundle("navigation").get())
+//                add("implementation", libs.findBundle("navigation").get())
                 add("implementation", libs.findBundle("ktx").get())
             }
         }
