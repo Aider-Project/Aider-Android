@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/calendarTFragment"
-        android:name="com.one.feature.assignment.teacher.CalendarTFragment"
+        android:name="com.one.feature.calendar.teacher.CalendarTFragment"
         android:label="CalendarTFragment" >
         <action
             android:id="@+id/action_calendarTFragment_to_calendarAddFragment"

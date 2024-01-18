@@ -1,4 +1,4 @@
-package com.one.feature.assignment.student
+package com.one.feature.calendar.student
 
 import android.os.Bundle
 import android.view.LayoutInflater
