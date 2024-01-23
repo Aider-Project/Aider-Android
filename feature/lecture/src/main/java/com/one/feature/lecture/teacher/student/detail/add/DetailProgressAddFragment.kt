@@ -1,4 +1,4 @@
-package com.one.feature.lecture.teacher.detail.add
+package com.one.feature.lecture.teacher.student.detail.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

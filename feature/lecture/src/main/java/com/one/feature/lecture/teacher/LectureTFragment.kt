@@ -1,15 +1,11 @@
 package com.one.feature.lecture.teacher
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.one.core.common_ui.base.BaseFragment
-import com.one.feature.lecture.R
 import com.one.feature.lecture.databinding.FragmentLectureTBinding
+import com.one.feature.lecture.teacher.classroom.LectureTClassroomFragment
+import com.one.feature.lecture.teacher.student.LectureTStudentFragment
 
 class LectureTFragment : BaseFragment<FragmentLectureTBinding>(FragmentLectureTBinding::inflate) {
     lateinit var lectureTAdapter: LectureTAdapter
@@ -21,8 +17,8 @@ class LectureTFragment : BaseFragment<FragmentLectureTBinding>(FragmentLectureTB
     private fun makeTabLayout() {
         lectureTAdapter = LectureTAdapter(this)
 
-        lectureTAdapter.addFragment(LectureClassFragment())
-        lectureTAdapter.addFragment(LectureStudentFragment())
+        lectureTAdapter.addFragment(LectureTClassroomFragment())
+        lectureTAdapter.addFragment(LectureTStudentFragment())
 
         binding.viewPagerLectureT.adapter = lectureTAdapter
         binding.viewPagerLectureT.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){

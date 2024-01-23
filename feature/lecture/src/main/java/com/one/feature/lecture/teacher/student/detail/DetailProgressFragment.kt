@@ -1,4 +1,4 @@
-package com.one.feature.lecture.teacher.detail
+package com.one.feature.lecture.teacher.student.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
