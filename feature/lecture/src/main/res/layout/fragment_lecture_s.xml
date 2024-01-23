@@ -1,13 +1,30 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg0"
     tools:context="com.one.feature.lecture.student.LectureSFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_lecture_s"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/tablayout_bg_corner"
+        app:tabIndicator="@drawable/tablayout_bg_indicator_border_corner"
+        app:tabIndicatorColor="#0000"
+        app:tabIndicatorHeight="32dp"
+        app:tabMode="auto"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabTextColor="@color/bg60"
+        app:tabSelectedTextColor="@color/blue"/>
 
-</FrameLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_lecture_s"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
