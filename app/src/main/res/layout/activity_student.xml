@@ -22,12 +22,10 @@
         android:id="@+id/btnv_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemActiveIndicatorStyle="@android:color/transparent"
-        app:itemBackground="@color/white"
-        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_btnv_student" />
+        app:menu="@menu/menu_btnv_student"
+        style="@style/BottomNavigationView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

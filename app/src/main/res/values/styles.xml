@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationView" type="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemActiveIndicatorStyle">@android:color/transparent</item>
+        <item name="itemTextColor">@drawable/selector_btnv_tv</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavigationView</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationView</item>
+    </style>
+</resources>
