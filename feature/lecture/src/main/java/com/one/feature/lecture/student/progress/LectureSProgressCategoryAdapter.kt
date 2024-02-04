@@ -11,7 +11,7 @@ import com.one.core.common_ui.base.ToggleAnimation
 import com.one.feature.lecture.databinding.ItemProgressLectureSRecyclerBinding
 
 class LectureSProgressCategoryAdapter: RecyclerView.Adapter<LectureSProgressCategoryAdapter.LectureSProgressCategoryViewHolder>() {
-    var lectureSCategoryList = arrayListOf<LectureSCategoryData>()
+    var lectureSCategoryList = arrayListOf<LectureSProgressCategoryData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LectureSProgressCategoryViewHolder {
         val binding = ItemProgressLectureSRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,7 +26,7 @@ class LectureSProgressCategoryAdapter: RecyclerView.Adapter<LectureSProgressCate
     }
 
     inner class LectureSProgressCategoryViewHolder(val binding: ItemProgressLectureSRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: LectureSCategoryData) {
+        fun bind(data: LectureSProgressCategoryData) {
             binding.tvCategoryLectureS.text = data.category
             binding.tvTeacherNameLectureS.text = data.teacherName
 
@@ -46,11 +46,11 @@ class LectureSProgressCategoryAdapter: RecyclerView.Adapter<LectureSProgressCate
             with(binding) {
                 val lectureSProgressListAdapter = LectureSProgressListAdapter()
 
-                val lectureSProgressList: ArrayList<LectureSListData> = ArrayList()
-                lectureSProgressList.add(LectureSListData("1단원", "~11.10", "~11.12", "잘했어요"))
-                lectureSProgressList.add(LectureSListData("1단원", "~11.10", "~11.12", "잘했어요"))
-                lectureSProgressList.add(LectureSListData("1단원", "~11.10", "~11.12", "잘했어요"))
-                lectureSProgressList.add(LectureSListData("1단원", "~11.10", "~11.12", "잘했어요"))
+                val lectureSProgressList: ArrayList<LectureSProgressListData> = ArrayList()
+                lectureSProgressList.add(LectureSProgressListData("1단원", "~11.10", "~11.12", "잘했어요"))
+                lectureSProgressList.add(LectureSProgressListData("1단원", "~11.10", "~11.12", "잘했어요"))
+                lectureSProgressList.add(LectureSProgressListData("1단원", "~11.10", "~11.12", "잘했어요"))
+                lectureSProgressList.add(LectureSProgressListData("1단원", "~11.10", "~11.12", "잘했어요"))
 
                 rvLectureListLectureS.adapter = lectureSProgressListAdapter
                 rvLectureListLectureS.layoutManager = LinearLayoutManager(itemView.context)
@@ -73,7 +73,7 @@ class LectureSProgressCategoryAdapter: RecyclerView.Adapter<LectureSProgressCate
     }
 }
 
-data class LectureSCategoryData(
+data class LectureSProgressCategoryData(
     val category: String, // 과목
     val teacherName: String
 )

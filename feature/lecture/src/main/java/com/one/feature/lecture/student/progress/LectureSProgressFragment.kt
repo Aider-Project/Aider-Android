@@ -14,10 +14,10 @@ class LectureSProgressFragment : BaseFragment<FragmentLectureSProgressBinding>(F
         with(binding) {
             val lectureSProgressAdapter = LectureSProgressCategoryAdapter()
 
-            val categoryList: ArrayList<LectureSCategoryData> = ArrayList()
-            categoryList.add(LectureSCategoryData("국어", "김민아"))
-            categoryList.add(LectureSCategoryData("수학", "박수민"))
-            categoryList.add(LectureSCategoryData("영어", "김민아"))
+            val categoryList: ArrayList<LectureSProgressCategoryData> = ArrayList()
+            categoryList.add(LectureSProgressCategoryData("국어", "김민아"))
+            categoryList.add(LectureSProgressCategoryData("수학", "박수민"))
+            categoryList.add(LectureSProgressCategoryData("영어", "김민아"))
 
             rvLectureS.adapter = lectureSProgressAdapter
             rvLectureS.layoutManager = LinearLayoutManager(context)

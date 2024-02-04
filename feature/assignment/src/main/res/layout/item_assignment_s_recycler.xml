@@ -63,9 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/cv_category_assignment_s"
+        app:layout_constraintBottom_toTopOf="@+id/btn_toggle_down"
         android:orientation="vertical"
         android:layout_marginHorizontal="18dp"
-        android:background="@color/bg20"
         android:visibility="gone"
         >
         <androidx.recyclerview.widget.RecyclerView
