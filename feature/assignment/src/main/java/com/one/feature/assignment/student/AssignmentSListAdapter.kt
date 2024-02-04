@@ -28,12 +28,14 @@ class AssignmentSAssignmentListAdapter: RecyclerView.Adapter<AssignmentSAssignme
 
     inner class AssignmentSAssignmentListViewHolder(val binding: ItemListAssignmentSRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: AssignmentListData) {
-            binding.tvAssignmentListAssignmnetS.text = data.title
+            binding.tvTitleAssignmentSList.text = data.title
         }
     }
 
 }
 
 data class AssignmentListData(
-    val title: String
+    val title: String,
+    val dday: String,
+    val status: String
 )

@@ -85,6 +85,7 @@
         app:layout_constraintStart_toStartOf="@id/linearlayout_assignment_list_assignment_s"
         app:layout_constraintEnd_toEndOf="@+id/linearlayout_assignment_list_assignment_s"
         android:layout_marginHorizontal="18dp"
-        android:paddingVertical="8dp"/>
+        android:paddingVertical="2dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
