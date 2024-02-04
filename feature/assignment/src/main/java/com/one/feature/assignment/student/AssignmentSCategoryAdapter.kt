@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.one.core.common_ui.base.ToggleAnimation
 import com.one.feature.assignment.databinding.ItemAssignmentSRecyclerBinding
 
 class AssignmentSCategoryAdapter: RecyclerView.Adapter<AssignmentSCategoryAdapter.AssignmentSCategoryViewHolder>() {
@@ -32,14 +33,14 @@ class AssignmentSCategoryAdapter: RecyclerView.Adapter<AssignmentSCategoryAdapte
             binding.tvTeacherNameAssignmentS.text = data.teacherName
 
             val layoutExpand = binding.linearlayoutAssignmentListAssignmentS
-                binding.btnToggleDown.setOnClickListener {
+            binding.btnToggleDown.setOnClickListener {
                 val show = toggleLayout(
                     !layoutExpand.isVisible,
                     it.findViewById(binding.btnToggleDown.id),
                     layoutExpand
                 )
-                    layoutExpand.isVisible = show
-                    getAssignmentList()
+                layoutExpand.isVisible = show
+                getAssignmentList()
             }
         }
 
@@ -50,6 +51,8 @@ class AssignmentSCategoryAdapter: RecyclerView.Adapter<AssignmentSCategoryAdapte
                 val assignmentList: ArrayList<AssignmentListData> = ArrayList()
                 assignmentList.add(AssignmentListData("1단원 문제풀이", "~11.10", "제출 완료"))
                 assignmentList.add(AssignmentListData("2단원 심화문제", "~11.17", "제출 완료"))
+                assignmentList.add(AssignmentListData("3단원 문제풀이", "~11.24", "제출 전"))
+                assignmentList.add(AssignmentListData("3단원 문제풀이", "~11.24", "제출 전"))
                 assignmentList.add(AssignmentListData("3단원 문제풀이", "~11.24", "제출 전"))
 
                 rvAssignmentListAssignmentS.adapter = assignmentListAdapter
@@ -64,9 +67,9 @@ class AssignmentSCategoryAdapter: RecyclerView.Adapter<AssignmentSCategoryAdapte
             view: View,
             layoutExpand: LinearLayout
         ): Boolean {
-            AssignmentSAnimation.toggleArrow(view, isExpanded)
-            if (isExpanded) AssignmentSAnimation.expandView(layoutExpand)
-            else AssignmentSAnimation.collapseView(layoutExpand)
+            ToggleAnimation.toggleArrow(view, isExpanded)
+            if (isExpanded) ToggleAnimation.expandView(layoutExpand)
+            else ToggleAnimation.collapseView(layoutExpand)
 
             return isExpanded
         }

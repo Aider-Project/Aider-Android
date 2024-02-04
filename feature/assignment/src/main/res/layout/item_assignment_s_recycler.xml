@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:id="@+id/constraint_layout_assignment_s">
 
     <androidx.cardview.widget.CardView
@@ -14,7 +13,6 @@
         app:cardElevation="0dp"
         app:cardCornerRadius="10dp"
         android:layout_marginHorizontal="18dp"
-        android:layout_marginTop="12dp"
         android:translationZ="1dp"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cv_category_assignment_s"
         android:orientation="vertical"
         android:layout_marginHorizontal="18dp"
-        android:background="@drawable/bg_rectangle_solid_bg20_radius_10"
+        android:background="@color/bg20"
         android:visibility="gone"
         >
         <androidx.recyclerview.widget.RecyclerView
@@ -84,8 +82,10 @@
         app:layout_constraintTop_toBottomOf="@+id/linearlayout_assignment_list_assignment_s"
         app:layout_constraintStart_toStartOf="@id/linearlayout_assignment_list_assignment_s"
         app:layout_constraintEnd_toEndOf="@+id/linearlayout_assignment_list_assignment_s"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginHorizontal="18dp"
         android:paddingVertical="2dp"
+        android:layout_marginBottom="12dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
