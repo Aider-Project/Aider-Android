@@ -1,5 +1,7 @@
 package com.one.feature.calendar.teacher
 
+import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.one.core.common_ui.base.BaseFragment
@@ -23,7 +25,9 @@ class CalendarTFragment :
                 val targetPos = Math.min(Int.MAX_VALUE, position + 1)
                 binding.cbCalendart.rvCalendarbase.scrollToPosition(targetPos)
             }
-        })
+        }) { month, day ->
+            Log.d("whatisthis", "$month $day")
+        }
 
         binding.cbCalendart.rvCalendarbase.apply {
             layoutManager = monthListManager

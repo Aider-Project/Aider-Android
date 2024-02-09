@@ -1,6 +1,7 @@
 package com.one.feature.calendar
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -9,11 +10,12 @@ import com.one.core.common_ui.databinding.ItemCalendarbaseDayBinding
 import java.util.Calendar
 import java.util.Date
 
-class CalendarDayAdapter(val tempMonth: Int, val dayList: MutableList<Date>) :
-    RecyclerView.Adapter<CalendarDayAdapter.DayView>() {
-
-    // 한 달을 표현하는 행의 수
-    val ROW = 5
+class CalendarDayAdapter(
+    val ROW : Int,     // 한 달을 표현하는 행의 수
+    val tempMonth: Int,
+    val dayList: MutableList<Date>,
+    val clickListener: (Int, Int) -> Unit,
+) : RecyclerView.Adapter<CalendarDayAdapter.DayView>() {
 
     // 각 날짜를 표현하는 ViewHolder 클래스
     inner class DayView(val binding: ItemCalendarbaseDayBinding) :
@@ -40,8 +42,9 @@ class CalendarDayAdapter(val tempMonth: Int, val dayList: MutableList<Date>) :
 
         // 날짜를 클릭하면 Toast 메시지를 표시
         holder.binding.layoutCalendarbaseitemdayDay.setOnClickListener {
-            Toast.makeText(holder.binding.root.context, "${dayList[position]}", Toast.LENGTH_SHORT)
-                .show()
+            if (tempMonth == month) {
+                clickListener(month+1, day)
+            }
         }
 
         // TextView에 날짜를 표시
