@@ -1,60 +1,41 @@
 package com.one.feature.calendar.student
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.one.feature.calendar.R
+import android.util.Log
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import com.one.core.common_ui.base.BaseFragment
+import com.one.feature.calendar.CalendarMonthAdapter
+import com.one.feature.calendar.databinding.FragmentCalendarSBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CalendarSFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class CalendarSFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calendar_s, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CalendarSFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CalendarSFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+class CalendarSFragment :
+    BaseFragment<FragmentCalendarSBinding>(FragmentCalendarSBinding::inflate) {
+    override fun onViewCreated() {
+        val monthListManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        val monthListAdapter = CalendarMonthAdapter(object : CalendarMonthAdapter.OnSwipeListener {
+            override fun onSwipeLeft(position: Int) {
+                // 왼쪽으로 swipe할 때의 동작을 구현합니다.
+                val targetPos = Math.max(0, position - 1)
+                binding.cbCalendars.rvCalendarbase.scrollToPosition(targetPos)
             }
+
+            override fun onSwipeRight(position: Int) {
+                // 오른쪽으로 swipe할 때의 동작을 구현합니다.
+                val targetPos = Math.min(Int.MAX_VALUE, position + 1)
+                binding.cbCalendars.rvCalendarbase.scrollToPosition(targetPos)
+            }
+        }) { month, day ->
+            Log.d("whatisthis", "$month $day")
+        }
+
+        binding.cbCalendars.rvCalendarbase.apply {
+            layoutManager = monthListManager
+            adapter = monthListAdapter
+            scrollToPosition(Int.MAX_VALUE / 2)
+        }
+        val snap = PagerSnapHelper()
+        snap.attachToRecyclerView(binding.cbCalendars.rvCalendarbase)
     }
+
 }
