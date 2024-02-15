@@ -2,10 +2,12 @@ package com.one.feature.calendar.teacher
 
 import android.util.Log
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.one.core.common_ui.base.BaseFragment
 import com.one.feature.calendar.CalendarMonthAdapter
+import com.one.feature.calendar.R
 import com.one.feature.calendar.databinding.FragmentCalendarTBinding
 
 class CalendarTFragment :
@@ -36,6 +38,14 @@ class CalendarTFragment :
         }
         val snap = PagerSnapHelper()
         snap.attachToRecyclerView(binding.cbCalendart.rvCalendarbase)
+
+        navigateToAddCalendar()
+    }
+
+    private fun navigateToAddCalendar() {
+        binding.btnAddCalendart.setOnClickListener {
+            findNavController().navigate(R.id.action_calendarTFragment_to_calendarAddFragment)
+        }
     }
 
 }
