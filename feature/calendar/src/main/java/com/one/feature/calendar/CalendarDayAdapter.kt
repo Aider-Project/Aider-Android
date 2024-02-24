@@ -40,13 +40,6 @@ class CalendarDayAdapter(
         // Calendar.MONTH 필드를 사용하여 월 정보를 가져옴
         val month = calendar.get(Calendar.MONTH)
 
-        // 날짜를 클릭하면 Toast 메시지를 표시
-        holder.binding.layoutCalendarbaseitemdayDay.setOnClickListener {
-            if (tempMonth == month) {
-                clickListener(month+1, day)
-            }
-        }
-
         // TextView에 날짜를 표시
         holder.binding.tvCalendarbaseitemdayDate.text = day.toString()
 
@@ -62,6 +55,13 @@ class CalendarDayAdapter(
         // 다른 달의 날짜는 투명도를 낮춤
         if (tempMonth != month) {
             holder.binding.tvCalendarbaseitemdayDate.alpha = 0.4f
+        }
+
+        // 날짜를 클릭하면 Toast 메시지를 표시
+        holder.binding.layoutCalendarbaseitemdayDay.setOnClickListener {
+            if (tempMonth == month) {
+                clickListener(month+1, day)
+            }
         }
     }
 

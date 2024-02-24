@@ -42,6 +42,7 @@ class CalendarMonthAdapter(
         with(holder) {
             binding.tvCalendarbaseitemmonthMonth.text =
                 "${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월"
+            Log.d("whatisthis", "${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월")
             val tempMonth = calendar.get(Calendar.MONTH)
 
             val lastDayCalendar = Calendar.getInstance()
