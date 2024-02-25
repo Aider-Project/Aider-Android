@@ -20,7 +20,8 @@
         app:tabMode="auto"
         app:tabIndicatorAnimationMode="elastic"
         app:tabTextColor="@color/bg60"
-        app:tabSelectedTextColor="@color/blue"/>
+        app:tabSelectedTextColor="@color/blue"
+        app:tabRippleColor="@android:color/transparent"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_lecture_t"
