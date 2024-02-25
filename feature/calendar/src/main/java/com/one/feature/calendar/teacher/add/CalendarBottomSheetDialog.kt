@@ -4,22 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.one.core.common_ui.base.BaseBottomSheetDialog
 import com.one.feature.calendar.CalendarMonthAdapter
 import com.one.feature.calendar.databinding.BottomSheetDialogCalendarBinding
 
-class CalendarBottomSheetDialog: BottomSheetDialogFragment() {
-    private lateinit var binding: BottomSheetDialogCalendarBinding
+class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendarBinding>(BottomSheetDialogCalendarBinding::inflate) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = BottomSheetDialogCalendarBinding.inflate(layoutInflater)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val monthListManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val monthListAdapter = CalendarMonthAdapter(object: CalendarMonthAdapter.OnSwipeListener {
@@ -43,7 +38,5 @@ class CalendarBottomSheetDialog: BottomSheetDialogFragment() {
 
         val snap = PagerSnapHelper()
         snap.attachToRecyclerView(binding.cbAddCalendart.rvCalendarbase)
-
-        return binding.root
     }
 }
