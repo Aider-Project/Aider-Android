@@ -4,6 +4,12 @@
     <color name="red">#F36262</color>
     <color name="green">#00B57D</color>
     <color name="purple">#8447DF</color>
+
+    <color name="lightblue">#CCE6FF</color>
+    <color name="pink">#FEEFEF</color>
+    <color name="lightgreen">#E5F8EE</color>
+    <color name="lightpurple">#F3EDFC</color>
+
     <color name="bg100">#000000</color>
     <color name="bg80">#888E95</color>
     <color name="bg60">#C7C8CE</color>

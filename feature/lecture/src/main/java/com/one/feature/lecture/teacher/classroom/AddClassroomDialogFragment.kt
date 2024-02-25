@@ -9,6 +9,11 @@ import com.one.feature.lecture.databinding.DialogFragmentAddClassroomBinding
 class AddClassroomDialogFragment :
     BaseDialogFragment<DialogFragmentAddClassroomBinding>(DialogFragmentAddClassroomBinding::inflate) {
 
+    /**
+     * On create dialog
+     *
+     * @param window
+     */
     override fun onCreateDialog(window: Window?) {
         // window가 null이 아니면
         window?.let {
