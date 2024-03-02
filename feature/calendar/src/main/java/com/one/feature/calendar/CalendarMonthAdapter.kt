@@ -55,7 +55,6 @@ class CalendarMonthAdapter(
 
             // 해당 월의 마지막 날짜가 포함된 주가 그 달의 몇 번째 주인지 계산
             weekOfMonth = lastDayCalendar.get(Calendar.WEEK_OF_MONTH)
-
             var dayList: MutableList<Date> = MutableList(weekOfMonth * 7) { Date() } // 5행 * 7일
             for (i in 0 until weekOfMonth) { // 5행만큼 반복
                 // 주의 시작을 일요일로 고정
