@@ -1,10 +1,13 @@
 package com.one.feature.calendar.teacher
 
 import android.util.Log
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.one.core.common_ui.base.BaseFragment
 import com.one.feature.calendar.CalendarMonthAdapter
+import com.one.feature.calendar.R
 import com.one.feature.calendar.databinding.FragmentCalendarTBinding
 
 class CalendarTFragment :
@@ -12,7 +15,7 @@ class CalendarTFragment :
     override fun onViewCreated() {
         val monthListManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val monthListAdapter = CalendarMonthAdapter(object : CalendarMonthAdapter.OnSwipeListener {
+        val monthListAdapter = CalendarMonthAdapter(false, object : CalendarMonthAdapter.OnSwipeListener {
             override fun onSwipeLeft(position: Int) {
                 // 왼쪽으로 swipe할 때의 동작을 구현합니다.
                 val targetPos = Math.max(0, position - 1)
@@ -34,7 +37,15 @@ class CalendarTFragment :
             scrollToPosition(Int.MAX_VALUE / 2)
         }
         val snap = PagerSnapHelper()
-        snap.attachToRecyclerView(binding.rvCalendart)
+        snap.attachToRecyclerView(binding.cbCalendart.rvCalendarbase)
+
+        navigateToAddCalendar()
+    }
+
+    private fun navigateToAddCalendar() {
+        binding.btnAddCalendart.setOnClickListener {
+            findNavController().navigate(R.id.action_calendarTFragment_to_calendarAddFragment)
+        }
     }
 
 }

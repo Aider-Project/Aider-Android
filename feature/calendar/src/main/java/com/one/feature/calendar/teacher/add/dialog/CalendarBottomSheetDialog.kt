@@ -13,7 +13,7 @@ class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendar
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val monthListManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val monthListAdapter = CalendarMonthAdapter( object: CalendarMonthAdapter.OnSwipeListener {
+        val monthListAdapter = CalendarMonthAdapter(true, object: CalendarMonthAdapter.OnSwipeListener {
             override fun onSwipeLeft(position: Int) {
                 val targetPos = Math.max(0, position - 1)
                 //binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
