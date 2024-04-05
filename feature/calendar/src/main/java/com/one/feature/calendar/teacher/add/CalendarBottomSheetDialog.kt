@@ -20,23 +20,31 @@ class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendar
         val monthListAdapter = CalendarMonthAdapter(object: CalendarMonthAdapter.OnSwipeListener {
             override fun onSwipeLeft(position: Int) {
                 val targetPos = Math.max(0, position - 1)
-                binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
+                //binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
+                binding.rvAddCalendart.scrollToPosition(targetPos)
             }
 
             override fun onSwipeRight(position: Int) {
                 val targetPos = Math.min(Int.MAX_VALUE, position + 1)
-                binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
+                //binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
+                binding.rvAddCalendart.scrollToPosition(targetPos)
             }
 
         }) { _, _ -> }
 
-        binding.cbAddCalendart.rvCalendarbase.apply {
+        /*binding.cbAddCalendart.rvCalendarbase.apply {
+            layoutManager = monthListManager
+            adapter = monthListAdapter
+            scrollToPosition(Int.MAX_VALUE / 2)
+        }*/
+        binding.rvAddCalendart.apply {
             layoutManager = monthListManager
             adapter = monthListAdapter
             scrollToPosition(Int.MAX_VALUE / 2)
         }
 
         val snap = PagerSnapHelper()
-        snap.attachToRecyclerView(binding.cbAddCalendart.rvCalendarbase)
+        //snap.attachToRecyclerView(binding.cbAddCalendart.rvCalendarbase)
+        snap.attachToRecyclerView(binding.rvAddCalendart)
     }
 }

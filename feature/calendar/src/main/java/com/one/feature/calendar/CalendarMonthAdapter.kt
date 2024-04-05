@@ -46,7 +46,7 @@ class CalendarMonthAdapter(
             val tempMonth = calendar.get(Calendar.MONTH)
 
             val lastDayCalendar = Calendar.getInstance()
-            var weekOfMonth: Int = 0
+            /*var weekOfMonth: Int = 0
             // 해당 월의 마지막 날짜를 얻기 위한 Calendar 인스턴스를 생성
             lastDayCalendar.time = calendar.time // 현재 calendar의 시간을 lastDayCalendar로 복사
             lastDayCalendar.set(
@@ -54,7 +54,8 @@ class CalendarMonthAdapter(
             ) // 해당 월의 마지막 날짜로 설정
 
             // 해당 월의 마지막 날짜가 포함된 주가 그 달의 몇 번째 주인지 계산
-            weekOfMonth = lastDayCalendar.get(Calendar.WEEK_OF_MONTH)
+            weekOfMonth = lastDayCalendar.get(Calendar.WEEK_OF_MONTH)*/
+            var weekOfMonth = 6 // 6줄로 지정
 
             var dayList: MutableList<Date> = MutableList(weekOfMonth * 7) { Date() } // 5행 * 7일
             for (i in 0 until weekOfMonth) { // 5행만큼 반복
