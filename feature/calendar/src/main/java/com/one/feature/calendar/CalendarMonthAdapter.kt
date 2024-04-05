@@ -11,8 +11,9 @@ import java.util.Calendar
 import java.util.Date
 
 class CalendarMonthAdapter(
+    val isBottomDialog: Boolean,
     var onSwipeListener: OnSwipeListener,
-    val clickListener: (Int, Int) -> Unit,
+    val clickListener: (Int, Int) -> Unit
 ) : RecyclerView.Adapter<CalendarMonthAdapter.MonthView>() {
     val center = Int.MAX_VALUE / 2
     private var calendar = Calendar.getInstance()
@@ -69,7 +70,7 @@ class CalendarMonthAdapter(
             }
 
             val dayListManager = GridLayoutManager(holder.binding.root.context, 7)
-            val dayListAdapter = CalendarDayAdapter(weekOfMonth, tempMonth, dayList) { month, day ->
+            val dayListAdapter = CalendarDayAdapter(weekOfMonth, tempMonth, dayList, isBottomDialog) { month, day ->
                 clickListener(month, day)
             }
 

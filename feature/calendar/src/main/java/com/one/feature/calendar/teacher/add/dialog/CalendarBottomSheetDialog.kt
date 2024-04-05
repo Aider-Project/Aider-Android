@@ -11,9 +11,9 @@ import com.one.feature.calendar.databinding.BottomSheetDialogCalendarBinding
 class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendarBinding>(BottomSheetDialogCalendarBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val monthNoSpaceListManager =
+        val monthListManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val monthListAdapter = CalendarMonthNoSpaceAdapter(object: CalendarMonthNoSpaceAdapter.OnSwipeListener {
+        val monthListAdapter = CalendarMonthAdapter(true, object: CalendarMonthAdapter.OnSwipeListener {
             override fun onSwipeLeft(position: Int) {
                 val targetPos = Math.max(0, position - 1)
                 //binding.cbAddCalendart.rvCalendarbase.scrollToPosition(targetPos)
@@ -26,7 +26,7 @@ class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendar
                 binding.rvAddCalendart.scrollToPosition(targetPos)
             }
 
-        }) { _, _ -> }
+        }) { _, _-> }
 
         /*binding.cbAddCalendart.rvCalendarbase.apply {
             layoutManager = monthListManager
@@ -34,7 +34,7 @@ class CalendarBottomSheetDialog: BaseBottomSheetDialog<BottomSheetDialogCalendar
             scrollToPosition(Int.MAX_VALUE / 2)
         }*/
         binding.rvAddCalendart.apply {
-            layoutManager = monthNoSpaceListManager
+            layoutManager = monthListManager
             adapter = monthListAdapter
             scrollToPosition(Int.MAX_VALUE / 2)
         }
