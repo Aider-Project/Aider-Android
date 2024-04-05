@@ -13,7 +13,7 @@ class CalendarSFragment :
     override fun onViewCreated() {
         val monthListManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val monthListAdapter = CalendarMonthAdapter(object : CalendarMonthAdapter.OnSwipeListener {
+        val monthListAdapter = CalendarMonthAdapter(false, object : CalendarMonthAdapter.OnSwipeListener {
             override fun onSwipeLeft(position: Int) {
                 // 왼쪽으로 swipe할 때의 동작을 구현합니다.
                 val targetPos = Math.max(0, position - 1)

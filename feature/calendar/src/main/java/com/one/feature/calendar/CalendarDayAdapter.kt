@@ -14,7 +14,8 @@ class CalendarDayAdapter(
     val ROW : Int,     // 한 달을 표현하는 행의 수
     val tempMonth: Int,
     val dayList: MutableList<Date>,
-    val clickListener: (Int, Int) -> Unit,
+    val isBottomDialog: Boolean,
+    val clickListener: (Int, Int) -> Unit
 ) : RecyclerView.Adapter<CalendarDayAdapter.DayView>() {
 
     // 각 날짜를 표현하는 ViewHolder 클래스
@@ -42,6 +43,9 @@ class CalendarDayAdapter(
 
         // TextView에 날짜를 표시
         holder.binding.tvCalendarbaseitemdayDate.text = day.toString()
+        if (isBottomDialog) {
+            holder.binding.tvCalendarbaseitemdayDate.setPadding(0, 0, 0, 70)
+        }
 
         // 요일에 따라 텍스트 색상을 설정
         holder.binding.tvCalendarbaseitemdayDate.setTextColor(
