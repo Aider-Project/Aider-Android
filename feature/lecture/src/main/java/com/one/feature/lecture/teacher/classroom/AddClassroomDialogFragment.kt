@@ -4,30 +4,64 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.EditText
 import com.one.core.common_ui.base.BaseDialogFragment
+import com.one.core.common_ui.base.OptionButtonHelper
+import com.one.core.common_ui.base.TextBackgroundOptionButton
 import com.one.feature.lecture.databinding.DialogFragmentAddClassroomBinding
+import com.one.core.common_ui.R as commonUi
 
 class AddClassroomDialogFragment :
     BaseDialogFragment<DialogFragmentAddClassroomBinding>(DialogFragmentAddClassroomBinding::inflate) {
 
-    /**
-     * On create dialog
-     *
-     * @param window
-     */
+    private val optionButtonHelper: OptionButtonHelper = OptionButtonHelper()
     override fun onCreateDialog(window: Window?) {
+        initSubjectButton()
+
         // window가 null이 아니면
         window?.let {
             showKeyboard(it, binding.edittvAddclassroomName)
         }
     }
 
-    // Context 객체를 파라미터로 전달하는 경우
-    fun showKeyboard(window: Window, editText: EditText) {
+    private fun initSubjectButton() {
+        val buttonData = mapOf(
+            binding.tvAddclassroomKorean to Pair(
+                commonUi.color.blue, commonUi.drawable.iv_bt_background_blueline
+            ), binding.tvAddclassroomEnglish to Pair(
+                commonUi.color.red, commonUi.drawable.iv_bt_background_redline
+            ), binding.tvAddclassroomSocial to Pair(
+                commonUi.color.green, commonUi.drawable.iv_bt_background_greenline
+            ), binding.tvAddclassroomScience to Pair(
+                commonUi.color.purple, commonUi.drawable.iv_bt_background_purpleline
+            )
+        )
+
+        buttonData.forEach { (textView, colorAndDrawable) ->
+            val (color, drawable) = colorAndDrawable
+            optionButtonHelper.registerButton(
+                textView.hashCode(), TextBackgroundOptionButton(
+                    textView = textView,
+                    baseTextColor = commonUi.color.bg60,
+                    selectedTextColor = color,
+                    baseImage = commonUi.drawable.iv_bt_background_grayline,
+                    selectedImage = drawable,
+                )
+            )
+            textView.setOnClickListener {
+                optionButtonHelper.selectButton(textView.hashCode())
+            }
+        }
+    }
+
+    private fun showKeyboard(window: Window, editText: EditText) {
         // EditText에 포커스를 줍니다.
         editText.requestFocus()
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
     }
 
+    override fun onDestroyView() {
+        optionButtonHelper.removeRadioButtonHelper()
+        super.onDestroyView()
+    }
 }
 
 //class AddClassroomDialogFragment : DialogFragment() {
