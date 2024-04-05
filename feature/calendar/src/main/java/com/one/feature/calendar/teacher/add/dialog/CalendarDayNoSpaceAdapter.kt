@@ -1,4 +1,4 @@
-package com.one.feature.calendar
+package com.one.feature.calendar.teacher.add.dialog
 
 import android.graphics.Color
 import android.util.Log
@@ -11,22 +11,22 @@ import com.one.core.common_ui.databinding.ItemCalendarbaseDayNoSpaceBinding
 import java.util.Calendar
 import java.util.Date
 
-class CalendarDayAdapter(
+class CalendarDayNoSpaceAdapter(
     val ROW : Int,     // 한 달을 표현하는 행의 수
     val tempMonth: Int,
     val dayList: MutableList<Date>,
     val clickListener: (Int, Int) -> Unit,
-) : RecyclerView.Adapter<CalendarDayAdapter.DayView>() {
+) : RecyclerView.Adapter<CalendarDayNoSpaceAdapter.DayView>() {
 
     // 각 날짜를 표현하는 ViewHolder 클래스
-    inner class DayView(val binding: ItemCalendarbaseDayBinding) :
+    inner class DayView(val binding: ItemCalendarbaseDayNoSpaceBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     // ViewHolder를 생성하는 함수
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayView {
         // View Binding을 사용하여 뷰를 생성
         val binding =
-            ItemCalendarbaseDayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemCalendarbaseDayNoSpaceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DayView(binding)
     }
 
