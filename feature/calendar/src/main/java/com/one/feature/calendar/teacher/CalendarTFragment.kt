@@ -19,19 +19,19 @@ class CalendarTFragment :
             override fun onSwipeLeft(position: Int) {
                 // 왼쪽으로 swipe할 때의 동작을 구현합니다.
                 val targetPos = Math.max(0, position - 1)
-                binding.rvCalendart.scrollToPosition(targetPos)
+                binding.cbCalendart.rvCalendarbase.scrollToPosition(targetPos)
             }
 
             override fun onSwipeRight(position: Int) {
                 // 오른쪽으로 swipe할 때의 동작을 구현합니다.
                 val targetPos = Math.min(Int.MAX_VALUE, position + 1)
-                binding.rvCalendart.scrollToPosition(targetPos)
+                binding.cbCalendart.rvCalendarbase.scrollToPosition(targetPos)
             }
         }) { month, day ->
             Log.d("whatisthis", "$month $day")
         }
 
-        binding.rvCalendart.apply {
+        binding.cbCalendart.rvCalendarbase.apply {
             layoutManager = monthListManager
             adapter = monthListAdapter
             scrollToPosition(Int.MAX_VALUE / 2)
