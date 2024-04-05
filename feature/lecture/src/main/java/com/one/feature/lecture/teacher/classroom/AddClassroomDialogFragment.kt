@@ -4,15 +4,15 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.EditText
 import com.one.core.common_ui.base.BaseDialogFragment
-import com.one.core.common_ui.base.OptionButton
 import com.one.core.common_ui.base.OptionButtonHelper
+import com.one.core.common_ui.base.TextBackgroundOptionButton
 import com.one.feature.lecture.databinding.DialogFragmentAddClassroomBinding
 import com.one.core.common_ui.R as commonUi
 
 class AddClassroomDialogFragment :
     BaseDialogFragment<DialogFragmentAddClassroomBinding>(DialogFragmentAddClassroomBinding::inflate) {
 
-    private val temp: OptionButtonHelper = OptionButtonHelper()
+    private val optionButtonHelper: OptionButtonHelper = OptionButtonHelper()
     override fun onCreateDialog(window: Window?) {
         initSubjectButton()
 
@@ -37,13 +37,17 @@ class AddClassroomDialogFragment :
 
         buttonData.forEach { (textView, colorAndDrawable) ->
             val (color, drawable) = colorAndDrawable
-            temp.registerButton(
-                textView.text.toString(), OptionButton(
-                    textView, color, drawable
+            optionButtonHelper.registerButton(
+                textView.hashCode(), TextBackgroundOptionButton(
+                    textView = textView,
+                    baseTextColor = commonUi.color.bg60,
+                    selectedTextColor = color,
+                    baseImage = commonUi.drawable.iv_bt_background_grayline,
+                    selectedImage = drawable,
                 )
             )
             textView.setOnClickListener {
-                temp.selectButton(textView.text.toString())
+                optionButtonHelper.selectButton(textView.hashCode())
             }
         }
     }
@@ -55,7 +59,7 @@ class AddClassroomDialogFragment :
     }
 
     override fun onDestroyView() {
-        temp.removeRadioButtonHelper()
+        optionButtonHelper.removeRadioButtonHelper()
         super.onDestroyView()
     }
 }
